@@ -1,9 +1,14 @@
 from doctor import Doctor
 import sys
 from functools import partial
-from PyQt5.QtWidgets import QWidget, QLabel, QPushButton, QApplication, QMainWindow, QHBoxLayout, QVBoxLayout
-from PyQt5 import QtCore
-
+try:
+	from PyQt5.QtWidgets import QWidget, QLabel, QPushButton, QApplication, QMainWindow, QHBoxLayout, QVBoxLayout
+except ImportError:
+	from PyQt4.QtGui import QWidget, QLabel, QPushButton, QApplication, QMainWindow, QHBoxLayout, QVBoxLayout
+try:
+	from PyQt5 import QtCore
+except ImportError:
+	from PyQt4 import QtCore
 
 class MainWindow(QMainWindow):
 	def __init__(self, parent=None):
